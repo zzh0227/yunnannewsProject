@@ -28,3 +28,7 @@ pip install scrapy
 ```shell
 scrapy runspider homepage_news.py
 ```
+
+### 参考资料
+
+[scrapy实战案例之 — 抓取腾讯新闻（手把手带你练习）](https://www.bilibili.com/video/BV14s411w75R/)

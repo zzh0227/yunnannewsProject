@@ -3,11 +3,11 @@ import scrapy
 
 class HomepageNewsSpider(scrapy.Spider):
     name = 'homepage_news'
-    allowed_domains = ['www.yunnan.cn']
-    start_urls = ['http://www.yunnan.cn/']
+    allowed_domains = ['yunnan.cn']
+    start_urls = ['https://yn.yunnan.cn/sz/']
+    # 如果你访问不了，可以在这里改User-Agent https://user-agents.net/random
     headers = {
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) "
-                      "Chrome/107.0.0.0 Safari/537.36 Edg/107.0.1418.42 "
+        "User-Agent": "Mozilla/5.0 (Linux; Android 10; G301) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.74 Mobile Safari/537.36"
     }
 
     def start_requests(self):
@@ -15,6 +15,7 @@ class HomepageNewsSpider(scrapy.Spider):
             yield scrapy.Request(url=url, callback=self.parse, headers=self.headers)
 
     def parse(self, response):
-        hrefs = response.xpath('//div[@class="tt clearfix"]//a/@href').extract()
-        print(hrefs)
+        hrefs = response.xpath('//div[@class="xx ohd clear"]//a/@href').extract()
+        for href in hrefs:
+            print(href)
         pass

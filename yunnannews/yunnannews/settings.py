@@ -21,6 +21,8 @@ ROBOTSTXT_OBEY = False
 
 LOG_LEVEL = "WARNING"
 
+DOWNLOAD_DELAY = 0.25
+
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 #CONCURRENT_REQUESTS = 32
 
